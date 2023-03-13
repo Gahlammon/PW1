@@ -16,15 +16,5 @@ namespace Project1
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            label1.Text = DateTime.Now.ToString("HH.mm.ss");
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form2 stoper = new Form2();
-            stoper.ShowDialog();
-        }
     }
 }
