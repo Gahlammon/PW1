@@ -19,7 +19,7 @@ namespace Project1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2();
+            Form2 f2 = new Form2(this);
             f2.ShowDialog();
         }
 
@@ -27,6 +27,11 @@ namespace Project1
         {
             Form3 f3 = new Form3();
             f3.ShowDialog();
+        }
+
+        public void setPrice(double price)
+        {
+            label1.Text = price.ToString();
         }
     }
 }
