@@ -16,11 +16,17 @@ namespace Project1
         private double price = 0.0;
         private int currentRadio = -1;
         private double[] hardDiskPrice = { 5, 10, 15 };
+        private double[] accesoriesPrice = { 1, 2, 3 };
+        private CheckBox[] accesories;
 
         public Form2(Form1 parent)
         {
             InitializeComponent();
             f1 = parent;
+            accesories = new CheckBox[3];
+            accesories[0] = checkBox1;
+            accesories[1] = checkBox2;
+            accesories[2] = checkBox3;
         }
         
         private void newPrice(double value)
@@ -48,6 +54,18 @@ namespace Project1
             newPrice(value);
         }
 
+        private void checkboxClicked(int num)
+        {
+            if(accesories[num].Checked)
+            {
+                newPrice(price + accesoriesPrice[num]);
+            }
+            else
+            {
+                newPrice(price - accesoriesPrice[num]);
+            }
+        }
+
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             radioClicked(0);
@@ -61,6 +79,19 @@ namespace Project1
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             radioClicked(2);
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            checkboxClicked(0);
+        }
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            checkboxClicked(1);
+        }
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            checkboxClicked(2);
         }
     }
 }

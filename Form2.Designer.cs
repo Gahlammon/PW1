@@ -115,6 +115,7 @@
             this.checkBox1.TabIndex = 6;
             this.checkBox1.Text = "MYSZ";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // checkBox2
             // 
@@ -125,6 +126,7 @@
             this.checkBox2.TabIndex = 7;
             this.checkBox2.Text = "KLAWIATURA";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // checkBox3
             // 
@@ -135,6 +137,7 @@
             this.checkBox3.TabIndex = 8;
             this.checkBox3.Text = "SŁUCHAWKI";
             this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // checkedListBox1
             // 
