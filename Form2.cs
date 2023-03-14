@@ -17,7 +17,9 @@ namespace Project1
         private int currentRadio = -1;
         private double[] hardDiskPrice = { 5, 10, 15 };
         private double[] accesoriesPrice = { 1, 2, 3 };
+        private double[] graphicCardPrice = { 3, 7, 4, 9 };
         private CheckBox[] accesories;
+        private int comboBoxCurrent = -1;
 
         public Form2(Form1 parent)
         {
@@ -66,6 +68,18 @@ namespace Project1
             }
         }
 
+        private void comboBoxHandling(ComboBox input)
+        {
+            double value = price;
+            if(comboBoxCurrent != -1)
+            {
+                value -= graphicCardPrice[comboBoxCurrent];
+            }
+            comboBoxCurrent = input.SelectedIndex;
+            value += graphicCardPrice[comboBoxCurrent];
+            newPrice(value);
+        }
+
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             radioClicked(0);
@@ -92,6 +106,11 @@ namespace Project1
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
             checkboxClicked(2);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBoxHandling(comboBox1);
         }
     }
 }
