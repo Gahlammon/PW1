@@ -34,5 +34,10 @@ namespace Project1
             parent.newRecord(textBox1.Text, textBox2.Text, comboBox1.Text);
             Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
