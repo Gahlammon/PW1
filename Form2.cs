@@ -12,25 +12,9 @@ namespace Project1
 {
     public partial class Form2 : Form
     {
-        private Form1 f1;
-        private int channel;
-        private double price = 0.0;
-        private int currentRadio = -1;
-        private double[] hardDiskPrice = { 5, 10, 15 };
-        private double[] accesoriesPrice = { 1, 2, 3 };
-        private double[] graphicCardPrice = { 3, 7, 4, 9 };
-        private CheckBox[] accesories;
-        private int comboBoxCurrent = -1;
-
         public Form2(Form1 parent, int c)
         {
             InitializeComponent();
-            f1 = parent;
-            channel = c;
-            accesories = new CheckBox[3];
-            accesories[0] = checkBox1;
-            accesories[1] = checkBox2;
-            accesories[2] = checkBox3;
         }
         
         private void newPrice(double value)
