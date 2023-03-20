@@ -22,6 +22,13 @@ namespace Project1
             InitializeComponent();
         }
 
+        private void removeFromList(int index)
+        {
+            names.RemoveAt(index);
+            nationalities.RemoveAt(index);
+            roles.RemoveAt(index);
+            dataGridView1.Rows.Remove(dataGridView1.Rows[index]);
+        }
         private void addToList(string name, string nationality, string role)
         {
             dataGridView1.Rows.Add(name, nationality, role);
@@ -55,6 +62,15 @@ namespace Project1
         {
             Form2 creator = new Form2(this);
             creator.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            while (dataGridView1.SelectedRows.Count > 1)
+            {
+                removeFromList(dataGridView1.SelectedRows[0].Index);
+            }
+            removeFromList(dataGridView1.SelectedRows[0].Index);
         }
     }
 }
