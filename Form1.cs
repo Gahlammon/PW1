@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Project1
 {
@@ -22,6 +23,15 @@ namespace Project1
             InitializeComponent();
         }
 
+        private void saveData(string name)
+        {
+            string input = "";
+            for (int i = 0; i < names.Count; i++)
+            {
+                input += names[i] + ";" + nationalities[i] + ";" + roles[i] + ";";
+            }
+            File.WriteAllText(Directory.GetCurrentDirectory() + name, input);
+        }
         private void removeFromList(int index)
         {
             names.RemoveAt(index);
@@ -71,6 +81,11 @@ namespace Project1
                 removeFromList(dataGridView1.SelectedRows[0].Index);
             }
             removeFromList(dataGridView1.SelectedRows[0].Index);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            saveData("Data.csv");
         }
     }
 }
