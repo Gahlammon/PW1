@@ -92,7 +92,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(118, 33);
             this.button4.TabIndex = 5;
-            this.button4.Text = "Rename";
+            this.button4.Text = "Remove";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button5

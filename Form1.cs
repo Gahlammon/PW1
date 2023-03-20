@@ -12,9 +12,38 @@ namespace Project1
 {
     public partial class Form1 : Form
     {
+        private List<string> names = new List<string>();
+        private List<string> nationalities = new List<string>();
+        private List<string> roles = new List<string>();
+        private string[] avaiableRoles = { "Tank", "Natarcie", "Wsparcie" };
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void addToList(string name, string nationality, string role)
+        {
+            dataGridView1.Rows.Add(name, nationality, role);
+        }
+        public void newRecord(string name, string nationality, string role)
+        {
+            bool correctRole = false;
+            for(int i=0; i<avaiableRoles.Length; i++)
+            {
+                if(role == avaiableRoles[i])
+                {
+                    correctRole = true;
+                    break;
+                }
+            }
+            if (correctRole)
+            {
+                names.Add(name);
+                nationalities.Add(nationality);
+                roles.Add(role);
+                addToList(name, nationality, role);
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
