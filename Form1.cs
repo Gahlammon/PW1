@@ -69,7 +69,7 @@ namespace Project1
             string output = "";
             for (int i = 0; i < names.Count; i++)
             {
-                output += names[i] + ";" + nationalities[i] + ";" + roles[i] + ";";
+                output += names[i] + "," + nationalities[i] + "," + roles[i] + ",";
             }
             File.WriteAllText(path, output);
         }
@@ -81,12 +81,12 @@ namespace Project1
             roles = new List<string>();
             while (input != "")
             {
-                names.Add(input.Substring(0,input.IndexOf(';')));
-                input = input.Substring(input.IndexOf(';') + 1, input.Length - input.IndexOf(';') - 1);
-                nationalities.Add(input.Substring(0, input.IndexOf(';')));
-                input = input.Substring(input.IndexOf(';') + 1, input.Length - input.IndexOf(';') - 1);
-                roles.Add(input.Substring(0, input.IndexOf(';')));
-                input = input.Substring(input.IndexOf(';') + 1, input.Length - input.IndexOf(';') - 1);
+                names.Add(input.Substring(0,input.IndexOf(',')));
+                input = input.Substring(input.IndexOf(',') + 1, input.Length - input.IndexOf(',') - 1);
+                nationalities.Add(input.Substring(0, input.IndexOf(',')));
+                input = input.Substring(input.IndexOf(',') + 1, input.Length - input.IndexOf(',') - 1);
+                roles.Add(input.Substring(0, input.IndexOf(',')));
+                input = input.Substring(input.IndexOf(',') + 1, input.Length - input.IndexOf(',') - 1);
             }
             recreateDataGrid();
         }
