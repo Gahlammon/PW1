@@ -39,6 +39,9 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,7 +103,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(118, 33);
             this.button3.TabIndex = 4;
-            this.button3.Text = "Add";
+            this.button3.Text = "Dodaj";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -110,35 +113,66 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(118, 33);
             this.button4.TabIndex = 5;
-            this.button4.Text = "Remove";
+            this.button4.Text = "Usuń";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(261, 210);
+            this.button5.Location = new System.Drawing.Point(137, 210);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(118, 33);
             this.button5.TabIndex = 7;
-            this.button5.Text = "Load";
+            this.button5.Text = "Wczytaj .csv";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(261, 169);
+            this.button6.Location = new System.Drawing.Point(13, 210);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(118, 33);
             this.button6.TabIndex = 6;
-            this.button6.Text = "Save";
+            this.button6.Text = "Zapisz .csv";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(261, 169);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(118, 33);
+            this.button7.TabIndex = 8;
+            this.button7.Text = "Wyszukaj";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(137, 253);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(118, 33);
+            this.button8.TabIndex = 10;
+            this.button8.Text = "Wczytaj .html";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(13, 253);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(118, 33);
+            this.button9.TabIndex = 9;
+            this.button9.Text = "Zapisz .html";
+            this.button9.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 255);
+            this.ClientSize = new System.Drawing.Size(390, 298);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button4);
@@ -167,6 +201,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
     }
 }
 

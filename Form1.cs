@@ -120,5 +120,11 @@ namespace Project1
         {
             loadData("Data.csv");
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form3 creator = new Form3();
+            creator.ShowDialog();
+        }
     }
 }
