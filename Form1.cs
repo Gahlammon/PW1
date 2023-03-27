@@ -119,7 +119,7 @@ namespace Project1
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Form3 creator = new Form3();
+            Form3 creator = new Form3(heroes);
             creator.ShowDialog();
         }
     }
