@@ -13,9 +13,7 @@ namespace Project1
 {
     public partial class Form1 : Form
     {
-        private List<string> names = new List<string>();
-        private List<string> nationalities = new List<string>();
-        private List<string> roles = new List<string>();
+        private List<Hero> heroes;
         private string[] avaiableRoles = { "Tank", "Natarcie", "Wsparcie" };
 
         public Form1()
@@ -25,9 +23,7 @@ namespace Project1
 
         private void removeFromList(int index)
         {
-            names.RemoveAt(index);
-            nationalities.RemoveAt(index);
-            roles.RemoveAt(index);
+            heroes.RemoveAt(index);
             dataGridView1.Rows.RemoveAt(index);
         }
         private void addToList(string name, string nationality, string role)
@@ -40,9 +36,9 @@ namespace Project1
             {
                 dataGridView1.Rows.RemoveAt(0);
             }
-            for (int i = 0; i < names.Count; i++)
+            for (int i = 0; i < heroes.Count; i++)
             {
-                addToList(names[i], nationalities[i], roles[i]);
+                addToList(heroes[i].name, heroes[i].nationality, heroes[i].role);
             }
         }
         public void newRecord(string name, string nationality, string role)
@@ -58,35 +54,35 @@ namespace Project1
             }
             if (correctRole)
             {
-                names.Add(name);
-                nationalities.Add(nationality);
-                roles.Add(role);
+                heroes.Add(new Hero(name, nationality, role));
                 addToList(name, nationality, role);
             }
         }
         private void saveData(string path)
         {
             string output = "";
-            for (int i = 0; i < names.Count; i++)
+            for (int i = 0; i < heroes.Count; i++)
             {
-                output += names[i] + "," + nationalities[i] + "," + roles[i] + ",";
+                output += heroes[i].name + "," + heroes[i].nationality + "," + heroes[i].role + ",";
             }
             File.WriteAllText(path, output);
         }
         private void loadData(string path)
         {
             string input = File.ReadAllText(path);
-            names = new List<string>();
-            nationalities = new List<string>();
-            roles = new List<string>();
+            string name;
+            string nationality;
+            string role;
+            heroes = new List<Hero>();
             while (input != "")
             {
-                names.Add(input.Substring(0,input.IndexOf(',')));
+                name = input.Substring(0,input.IndexOf(','));
                 input = input.Substring(input.IndexOf(',') + 1, input.Length - input.IndexOf(',') - 1);
-                nationalities.Add(input.Substring(0, input.IndexOf(',')));
+                nationality = input.Substring(0, input.IndexOf(','));
                 input = input.Substring(input.IndexOf(',') + 1, input.Length - input.IndexOf(',') - 1);
-                roles.Add(input.Substring(0, input.IndexOf(',')));
+                role = input.Substring(0, input.IndexOf(','));
                 input = input.Substring(input.IndexOf(',') + 1, input.Length - input.IndexOf(',') - 1);
+                heroes.Add(new Hero(name, nationality, role));
             }
             recreateDataGrid();
         }
