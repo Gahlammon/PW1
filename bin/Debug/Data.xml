@@ -30,4 +30,9 @@
     <Nationality>Japonia</Nationality>
     <Role>Natarcie</Role>
   </Hero>
+  <Hero>
+    <Name>Winston</Name>
+    <Nationality>Kolonia Księżycowa</Nationality>
+    <Role>Tank</Role>
+  </Hero>
 </ArrayOfHero>

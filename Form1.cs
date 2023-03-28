@@ -16,7 +16,7 @@ namespace Project1
     [Serializable]
     public partial class Form1 : Form
     {
-        private HeroList dataList = new HeroList();
+        private List<Hero> heroes;
         private string[] avaiableRoles = { "Tank", "Natarcie", "Wsparcie" };
 
         public Form1()
@@ -26,7 +26,7 @@ namespace Project1
 
         private void removeFromList(int index)
         {
-            dataList.heroes.RemoveAt(index);
+            heroes.RemoveAt(index);
             dataGridView1.Rows.RemoveAt(index);
         }
         private void addToList(string name, string nationality, string role)
@@ -39,9 +39,9 @@ namespace Project1
             {
                 dataGridView1.Rows.RemoveAt(0);
             }
-            for (int i = 0; i < dataList.heroes.Count; i++)
+            for (int i = 0; i < heroes.Count; i++)
             {
-                addToList(dataList.heroes[i].name, dataList.heroes[i].nationality, dataList.heroes[i].role);
+                addToList(heroes[i].name, heroes[i].nationality, heroes[i].role);
             }
         }
         public void newRecord(string name, string nationality, string role)
@@ -57,16 +57,16 @@ namespace Project1
             }
             if (correctRole)
             {
-                dataList.heroes.Add(new Hero(name, nationality, role));
+                heroes.Add(new Hero(name, nationality, role));
                 addToList(name, nationality, role);
             }
         }
         private void saveDataCsv(string path)
         {
             string output = "";
-            for (int i = 0; i < dataList.heroes.Count; i++)
+            for (int i = 0; i < heroes.Count; i++)
             {
-                output += dataList.heroes[i].name + "," + dataList.heroes[i].nationality + "," + dataList.heroes[i].role + ",";
+                output += heroes[i].name + "," + heroes[i].nationality + "," + heroes[i].role + ",";
             }
             File.WriteAllText(path, output);
         }
@@ -76,7 +76,7 @@ namespace Project1
             string name;
             string nationality;
             string role;
-            dataList = new HeroList();
+            heroes = new List<Hero>();
             while (input != "")
             {
                 name = input.Substring(0,input.IndexOf(','));
@@ -85,7 +85,7 @@ namespace Project1
                 input = input.Substring(input.IndexOf(',') + 1, input.Length - input.IndexOf(',') - 1);
                 role = input.Substring(0, input.IndexOf(','));
                 input = input.Substring(input.IndexOf(',') + 1, input.Length - input.IndexOf(',') - 1);
-                dataList.heroes.Add(new Hero(name, nationality, role));
+                heroes.Add(new Hero(name, nationality, role));
             }
             recreateDataGrid();
         }
@@ -93,7 +93,7 @@ namespace Project1
         {
             XmlSerializer serializer = new XmlSerializer(typeof(List<Hero>));
             StreamReader reader = new StreamReader(path);
-            dataList.heroes = (List<Hero>)serializer.Deserialize(reader);
+            heroes = (List<Hero>)serializer.Deserialize(reader);
             reader.Close();
             recreateDataGrid();
         }
@@ -101,7 +101,7 @@ namespace Project1
         {
             XmlSerializer serializer = new XmlSerializer(typeof(List<Hero>));
             StreamWriter writer = new StreamWriter(path);
-            serializer.Serialize(writer, dataList.heroes);
+            serializer.Serialize(writer, heroes);
             writer.Close();
         }
 
@@ -140,7 +140,7 @@ namespace Project1
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Form3 creator = new Form3(dataList.heroes);
+            Form3 creator = new Form3(heroes);
             creator.ShowDialog();
         }
 
