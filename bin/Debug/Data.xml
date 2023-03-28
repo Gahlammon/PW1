@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfHero xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Hero>
+    <Name>Reinhardt</Name>
+    <Nationality>Niemcy</Nationality>
+    <Role>Tank</Role>
+  </Hero>
+  <Hero>
+    <Name>Łaska</Name>
+    <Nationality>Szwajcaria</Nationality>
+    <Role>Wsparcie</Role>
+  </Hero>
+  <Hero>
+    <Name>Hanzo</Name>
+    <Nationality>Japonia</Nationality>
+    <Role>Natarcie</Role>
+  </Hero>
+  <Hero>
+    <Name>Bastion</Name>
+    <Nationality>Sektor Zero</Nationality>
+    <Role>Natarcie</Role>
+  </Hero>
+  <Hero>
+    <Name>Złomiarz</Name>
+    <Nationality>Australia</Nationality>
+    <Role>Natarcie</Role>
+  </Hero>
+  <Hero>
+    <Name>Genji</Name>
+    <Nationality>Japonia</Nationality>
+    <Role>Natarcie</Role>
+  </Hero>
+</ArrayOfHero>

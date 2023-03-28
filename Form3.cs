@@ -13,7 +13,6 @@ namespace Project1
     public partial class Form3 : Form
     {
         private List<Hero> heroes;
-        private List<Hero> listContent;
 
         public Form3(List<Hero> input)
         {
