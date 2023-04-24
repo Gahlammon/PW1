@@ -17,5 +17,36 @@ namespace Project1
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            switch(comboBox1.SelectedIndex)
+            {
+                case 0:
+                    {
+                        Form2 form = new Form2();
+                        form.ShowDialog();
+                        break;
+                    }
+                case 1:
+                    {
+                        Form4 form = new Form4();
+                        form.ShowDialog();
+                        break;
+                    }
+                case 2:
+                    {
+                        Form5 form = new Form5();
+                        form.ShowDialog();
+                        break;
+                    }
+                case 3:
+                    {
+                        Form6 form = new Form6();
+                        form.ShowDialog();
+                        break;
+                    }
+            }
+        }
     }
 }

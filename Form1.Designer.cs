@@ -35,6 +35,11 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Karta pracy dyplomowej",
+            "Opina promotora o pracy dyplomowej",
+            "Protokół z egzaminu dyplomowego",
+            "Opinia recenzenta o pracy dyplomowej"});
             this.comboBox1.Location = new System.Drawing.Point(13, 13);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(222, 21);
@@ -48,6 +53,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "OTWÓRZ";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
