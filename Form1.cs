@@ -70,5 +70,23 @@ namespace Project1
             negativeColor();
             updateImage();
         }
+
+        private void button1movement_Click(object sender, EventArgs e)
+        {
+            image.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            updateImage();
+        }
+
+        private void button2movement_Click(object sender, EventArgs e)
+        {
+            image.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            updateImage();
+        }
+
+        private void button3movement_Click(object sender, EventArgs e)
+        {
+            image.RotateFlip(RotateFlipType.RotateNoneFlipY);
+            updateImage();
+        }
     }
 }
