@@ -49,6 +49,26 @@ namespace Project1
             }
         }
 
+        private void AddTargets()
+        {
+            List<int> numbers = new List<int>();
+            int decision;
+            int chosen;
+            var randomGenerator = new Random();
+
+            for (int i = 0; i < size * size; i++)
+            {
+                numbers.Add(i);
+            }
+            for (int i = 0; i < targets; i++)
+            {
+                chosen = randomGenerator.Next(0, size * size - i);
+                decision = numbers[chosen];
+                numbers.RemoveAt(chosen);
+                target[decision / 5][decision % 5] = true;
+            }
+        }
+
         private void CreateButton(int x, int y)
         {
             int positionX = margin + x * (buttonSize + buttonGap);
@@ -84,6 +104,7 @@ namespace Project1
                     CreateButton(i, j);
                 }
             }
+            AddTargets();
             timeRemaining = k * 30;
             timer1.Enabled = true;
             timer1.Start();
