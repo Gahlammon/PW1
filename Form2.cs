@@ -12,16 +12,41 @@ namespace Project1
 {
     public partial class Form2 : Form
     {
+        private int size;
+        private int targets;
         private int buttonSize = 30;
         private int buttonGap = 10;
         private int margin = 20;
         private int topMargin = 40;
         private int timeRemaining;
         private List<List<Button>> buttons = new List<List<Button>>();
+        private List<List<bool>> target = new List<List<bool>>();
 
         private void ButtonClicked(object sender, EventArgs e)
         {
-
+            int x = 0;
+            int y = 0;
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    if (buttons[i][j] == sender)
+                    {
+                        x = i;
+                        y = j;
+                        break;
+                    }
+                }
+            }
+            buttons[x][y].Enabled = false;
+            if (target[x][y])
+            {
+                buttons[x][y].BackColor = Color.Green;
+            }
+            else
+            {
+                buttons[x][y].BackColor = Color.Red;
+            }
         }
 
         private void CreateButton(int x, int y)
@@ -32,21 +57,26 @@ namespace Project1
             if(x == 0)
             {
                 buttons.Add(new List<Button>());
+                target.Add(new List<bool>());
             }
             buttons[x].Add(new Button());
+            target[x].Add(new bool());
             buttons[x][y].Location = new Point(positionX, positionY);
             buttons[x][y].Size = new Size(buttonSize, buttonSize);
             buttons[x][y].Click += new System.EventHandler(this.ButtonClicked);
+            target[x][y] = false;
             this.Controls.Add(buttons[x][y]);
         }
 
         public Form2(int n, int k)
         {
-            int size = margin * 2 + n * buttonSize + (n - 1) * buttonGap; ;
+            size = n;
+            targets = k;
+            int pixelSize = margin * 2 + n * buttonSize + (n - 1) * buttonGap; ;
 
             InitializeComponent();
-            this.Width = size + 15;
-            this.Height = size + 40 + topMargin;
+            this.Width = pixelSize + 15;
+            this.Height = pixelSize + 40 + topMargin;
             for(int i = 0; i < n; i++)
             {
                 for(int j = 0; j < n; j++)
