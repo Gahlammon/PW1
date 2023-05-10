@@ -14,6 +14,7 @@ namespace Project1
     {
         private int size;
         private int targets;
+        private int targetsFound = 0;
         private int buttonSize = 30;
         private int buttonGap = 10;
         private int margin = 20;
@@ -42,6 +43,11 @@ namespace Project1
             if (target[x][y])
             {
                 buttons[x][y].BackColor = Color.Green;
+                targetsFound++;
+                if(targetsFound == targets)
+                {
+                    Victory();
+                }
             }
             else
             {
@@ -118,6 +124,33 @@ namespace Project1
         private void Form2_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Victory()
+        {
+            timer1.Stop();
+            label1.Text = "VICTORY!";
+            label1.ForeColor = Color.Green;
+            for(int i = 0; i < size; i++)
+            {
+                for(int j = 0; j < size; j++)
+                {
+                    buttons[i][j].Enabled = false;
+                }
+            }
+        }
+        private void Defeat()
+        {
+            timer1.Stop();
+            label1.Text = "DEFEAT!";
+            label1.ForeColor = Color.Red;
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    buttons[i][j].Enabled = false;
+                }
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
