@@ -18,35 +18,21 @@ namespace Project1
             InitializeComponent();
         }
 
+        private int StringValue(string input)
+        {
+            int output;
+            bool success = int.TryParse(input, out output);
+            if (!success)
+            {
+                output = 0;
+            }
+            return output;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            switch(comboBox1.SelectedIndex)
-            {
-                case 0:
-                    {
-                        Form2 form = new Form2();
-                        form.ShowDialog();
-                        break;
-                    }
-                case 1:
-                    {
-                        Form4 form = new Form4();
-                        form.ShowDialog();
-                        break;
-                    }
-                case 2:
-                    {
-                        Form5 form = new Form5();
-                        form.ShowDialog();
-                        break;
-                    }
-                case 3:
-                    {
-                        Form6 form = new Form6();
-                        form.ShowDialog();
-                        break;
-                    }
-            }
+            Form2 newForm = new Form2(StringValue(textBox1.Text), StringValue(textBox2.Text));
+            newForm.ShowDialog();
         }
     }
 }
