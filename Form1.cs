@@ -18,20 +18,9 @@ namespace Project1
             InitializeComponent();
         }
 
-        private int StringValue(string input)
-        {
-            int output;
-            bool success = int.TryParse(input, out output);
-            if (!success)
-            {
-                output = 0;
-            }
-            return output;
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 newForm = new Form2(StringValue(textBox1.Text), StringValue(textBox2.Text));
+            Form2 newForm = new Form2(textBox1.Text);
             newForm.ShowDialog();
         }
     }
