@@ -68,7 +68,7 @@ namespace Project1
             {
                 numbers.Add(i);
             }
-            for (int i = 0; i < targets; i++)
+            for (int i = 0; i < Math.Min(targets, size * size); i++)
             {
                 chosen = randomGenerator.Next(0, size * size - i);
                 decision = numbers[chosen];
@@ -98,22 +98,22 @@ namespace Project1
 
         public Form2(int n, int k)
         {
-            size = n;
-            targets = k;
-            int pixelSize = margin * 2 + n * buttonSize + (n - 1) * buttonGap; ;
+            size = Math.Max(1, n);
+            targets = Math.Max(1, k);
+            int pixelSize = margin * 2 + size * buttonSize + (size - 1) * buttonGap; ;
 
             InitializeComponent();
             this.Width = pixelSize + 15;
             this.Height = pixelSize + 40 + topMargin;
-            for(int i = 0; i < n; i++)
+            for(int i = 0; i < size; i++)
             {
-                for(int j = 0; j < n; j++)
+                for(int j = 0; j < size; j++)
                 {
                     CreateButton(i, j);
                 }
             }
             AddTargets();
-            timeTarget = k * 3;
+            timeTarget = targets * 3;
             timer1.Enabled = true;
             timer1.Start();
             clock = DateTime.Now;
