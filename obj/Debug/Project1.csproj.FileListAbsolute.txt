@@ -16,5 +16,4 @@ C:\AD18BAZA\Studyjne\S4\Programowanie wizualne\cwiczenia\PW1\obj\Debug\Project1.
 C:\AD18BAZA\Studyjne\S4\Programowanie wizualne\cwiczenia\PW1\obj\Debug\Project1.csproj.GenerateResource.cache
 C:\AD18BAZA\Studyjne\S4\Programowanie wizualne\cwiczenia\PW1\obj\Debug\Project1.exe
 C:\AD18BAZA\Studyjne\S4\Programowanie wizualne\cwiczenia\PW1\obj\Debug\Project1.pdb
-C:\AD18BAZA\Studyjne\S4\Programowanie wizualne\cwiczenia\PW1\obj\Debug\Project1.csprojAssemblyReference.cache
 C:\AD18BAZA\Studyjne\S4\Programowanie wizualne\cwiczenia\PW1\obj\Debug\Project1.Form2.resources

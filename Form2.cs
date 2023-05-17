@@ -19,7 +19,9 @@ namespace Project1
         private int buttonGap = 10;
         private int margin = 20;
         private int topMargin = 40;
-        private int timeRemaining;
+        private int timeTarget;
+        private string timeInfo = "Time remaining: ";
+        private DateTime clock;
         private List<List<Button>> buttons = new List<List<Button>>();
         private List<List<bool>> target = new List<List<bool>>();
 
@@ -111,9 +113,10 @@ namespace Project1
                 }
             }
             AddTargets();
-            timeRemaining = k * 30;
+            timeTarget = k * 3;
             timer1.Enabled = true;
             timer1.Start();
+            clock = DateTime.Now;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -155,8 +158,15 @@ namespace Project1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timeRemaining--;
-            label1.Text = (timeRemaining / 10.0).ToString();
+            //label1.Text = timeTarget + (clock - DateTime.Now).Seconds.ToString();
+            if (timeTarget + (clock - DateTime.Now).Seconds > 0)
+            {
+                label1.Text = timeInfo + (timeTarget + (clock - DateTime.Now).Seconds).ToString();
+            }
+            else
+            {
+                Defeat();
+            }
         }
     }
 }
