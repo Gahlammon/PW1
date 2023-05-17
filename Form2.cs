@@ -71,7 +71,7 @@ namespace Project1
                 chosen = randomGenerator.Next(0, size * size - i);
                 decision = numbers[chosen];
                 numbers.RemoveAt(chosen);
-                target[decision / 5][decision % 5] = true;
+                target[decision / size][decision % size] = true;
             }
         }
 
