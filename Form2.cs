@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Project1
 {
@@ -72,6 +73,17 @@ namespace Project1
                 input.Remove(key);
             }
         }
+        private void saveData(DataGridView input, string path)
+        {
+            string output = "";
+
+            for(int i=0;i<input.Rows.Count;i++)
+            {
+                output += input.Rows[i].Cells[0].Value + "," + input.Rows[i].Cells[1].Value + ",";
+            }
+
+            File.WriteAllText(path, output);
+        }
         public Form2(string input)
         {
             InitializeComponent();
@@ -84,7 +96,7 @@ namespace Project1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            saveData(dataGridView1, "DNA.csv");
         }
     }
 }
