@@ -26,6 +26,7 @@ namespace Project1
         {
             OpenFileDialog fileOpener = new OpenFileDialog();
             SoundPlayer loader = new SoundPlayer();
+            int searcher = 0;
 
             fileOpener.Title = "Select audio file";
             fileOpener.Filter = "wav files (*.wav)|*.wav";
@@ -34,7 +35,11 @@ namespace Project1
             {
                 loader.SoundLocation = fileOpener.FileName;
                 tracks.Add(loader);
-                listView1.Items.Add(fileOpener.FileName);
+                while(fileOpener.FileName.IndexOf((char) 92, searcher) > 0)
+                {
+                    searcher = fileOpener.FileName.IndexOf((char) 92, searcher);
+                }
+                listView1.Items.Add(fileOpener.FileName.Substring(searcher));
             }
         }
         private void RemoveFile()
@@ -47,7 +52,15 @@ namespace Project1
         }
         private void Play()
         {
-            tracks[currentTrack].Play();
+            if(listView1.SelectedItems.Count > 0)
+            {
+                currentTrack = listView1.SelectedItems[0].Index;
+                tracks[currentTrack].Play();
+            }
+        }
+        private void Pause()
+        {
+
         }
         private void Stop()
         {
@@ -68,5 +81,19 @@ namespace Project1
             Play();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Pause();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Stop();
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
