@@ -17,3 +17,14 @@ C:\AD18BAZA\Studyjne\S4\Programowanie wizualne\cwiczenia\PW1\obj\Debug\Project1.
 C:\AD18BAZA\Studyjne\S4\Programowanie wizualne\cwiczenia\PW1\obj\Debug\Project1.exe
 C:\AD18BAZA\Studyjne\S4\Programowanie wizualne\cwiczenia\PW1\obj\Debug\Project1.pdb
 C:\AD18BAZA\Studyjne\S4\Programowanie wizualne\cwiczenia\PW1\obj\Debug\Project1.csprojAssemblyReference.cache
+M:\Studia\4\Programowanie wizualne\Ostatnie_zadanie\bin\Debug\Project1.exe.config
+M:\Studia\4\Programowanie wizualne\Ostatnie_zadanie\bin\Debug\Project1.exe
+M:\Studia\4\Programowanie wizualne\Ostatnie_zadanie\bin\Debug\Project1.pdb
+M:\Studia\4\Programowanie wizualne\Ostatnie_zadanie\obj\Debug\Project1.csproj.AssemblyReference.cache
+M:\Studia\4\Programowanie wizualne\Ostatnie_zadanie\obj\Debug\Project1.csproj.SuggestedBindingRedirects.cache
+M:\Studia\4\Programowanie wizualne\Ostatnie_zadanie\obj\Debug\Project1.Properties.Resources.resources
+M:\Studia\4\Programowanie wizualne\Ostatnie_zadanie\obj\Debug\Project1.csproj.GenerateResource.cache
+M:\Studia\4\Programowanie wizualne\Ostatnie_zadanie\obj\Debug\Project1.csproj.CoreCompileInputs.cache
+M:\Studia\4\Programowanie wizualne\Ostatnie_zadanie\obj\Debug\Project1.exe
+M:\Studia\4\Programowanie wizualne\Ostatnie_zadanie\obj\Debug\Project1.pdb
+M:\Studia\4\Programowanie wizualne\Ostatnie_zadanie\obj\Debug\Project1.Form1.resources
