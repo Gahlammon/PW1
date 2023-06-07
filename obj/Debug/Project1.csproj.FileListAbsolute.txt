@@ -28,3 +28,4 @@ M:\Studia\4\Programowanie wizualne\Ostatnie_zadanie\obj\Debug\Project1.csproj.Co
 M:\Studia\4\Programowanie wizualne\Ostatnie_zadanie\obj\Debug\Project1.exe
 M:\Studia\4\Programowanie wizualne\Ostatnie_zadanie\obj\Debug\Project1.pdb
 M:\Studia\4\Programowanie wizualne\Ostatnie_zadanie\obj\Debug\Project1.Form1.resources
+M:\Studia\4\Programowanie wizualne\Ostatnie_zadanie\obj\Debug\Project1.Form2.resources

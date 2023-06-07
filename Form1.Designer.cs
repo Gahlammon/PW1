@@ -73,7 +73,6 @@
             this.W_card_view.Size = new System.Drawing.Size(51, 20);
             this.W_card_view.TabIndex = 2;
             this.W_card_view.Text = "label1";
-            this.W_card_view.Click += new System.EventHandler(this.W_card_view_Click);
             // 
             // W_card_view_bot
             // 

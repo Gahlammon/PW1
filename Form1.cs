@@ -14,7 +14,7 @@ namespace Project1
 {
     public partial class Form1 : Form
     {
-        int card_count = 26;
+        bool resault;
         public Form1()
         {
             InitializeComponent();
@@ -22,16 +22,12 @@ namespace Project1
             panel2.Visible = false;
             listView_BOT.Visible = false;
         }
-
+        
+    //przełączanie między grami
         private void War_button_Click(object sender, EventArgs e)
         {
             panel1.Visible = true;
             panel2.Visible = false;
-
-        }
-
-        private void W_card_view_Click(object sender, EventArgs e)
-        {
 
         }
 
