@@ -29,13 +29,40 @@ namespace Project1
                 return null;
             }
         }
-        public void CreateNewDeck()
+        private void Shuffle()
         {
+            List<Card> cardList = new List<Card>();
+            Random randomGenerator = new Random();
+            int index;
 
+            while(Cards.Count > 0)
+            {
+                cardList.Add(Cards.Dequeue());
+            }
+            while(cardList.Count > 0)
+            {
+                index = randomGenerator.Next(0, cardList.Count - 1);
+                Cards.Enqueue(cardList[index]);
+                cardList.RemoveAt(index);
+            }
         }
-        public CardDeck()
+        private void CreateNewDeck(int size)
         {
-            CreateNewDeck();
+            while(size > 0)
+            {
+                foreach (Card.Color i in Enum.GetValues(typeof(Card.Color)))
+                {
+                    foreach (Card.Value j in Enum.GetValues(typeof(Card.Value)))
+                    {
+                        Cards.Enqueue(new Card(i, j));
+                    }
+                }
+            }
+            Shuffle();
+        }
+        public CardDeck(int size)
+        {
+            CreateNewDeck(size);
         }
     }
 }
