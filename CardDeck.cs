@@ -48,7 +48,7 @@ namespace Project1
         }
         private void CreateNewDeck(int size)
         {
-            while(size > 0)
+            while(Cards.Count < size)
             {
                 foreach (Card.Color i in Enum.GetValues(typeof(Card.Color)))
                 {
@@ -59,6 +59,10 @@ namespace Project1
                 }
             }
             Shuffle();
+            while(Cards.Count > size)
+            {
+                Cards.Dequeue();
+            }
         }
         public CardDeck(int size)
         {
